@@ -38,9 +38,7 @@ const Home = () => (
 				<p>We also recognize that every situation is unique, with its own challenges and opportunities. That’s why we put a premium on listening and understanding. That’s why we work with you and your team to develop a bespoke solution. Your goals become our goals.</p>
 				<p>Let us help your small or medium sized business realize its potential.</p>
 			</div>
-			<div>
-				<img src="../assets/Farmilo-Square-Formal.png" alt="Bill Farmilo" class={style.logo}/>
-			</div>
+			<div />
 		</div>
 	</div>
 );

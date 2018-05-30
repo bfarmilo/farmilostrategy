@@ -5,11 +5,10 @@ import Icon from '../../components/social';
 const Home = () => (
 	<div class={style.home}>
 		<div class={style.firstSection}>
-			<div />
-			<div>
+			<div class={style.titleArea}>
 				<h1>Farmilo Strategy</h1>
 			</div>
-			<div>
+			<div class={style.subtitleArea}>
 				<h2>Solutions through persistence</h2>
 			</div>
 			<div class={style.social}>
@@ -27,10 +26,10 @@ const Home = () => (
 			</div>
 		</div>
 		<div id='about' class={style.secondSection}>
-			<div>
+			<div class={style.photoArea}>
 				<img src="../assets/FarmiloStrategy_2.png" alt="Bill Farmilo" class={style.logo} />
 			</div>
-			<div>
+			<div class={style.summaryArea}>
 				<h1>Farmilo Strategy</h1>
 				<h2><i>The best time to plant a tree was 25 years ago. The second best time is now.</i></h2>
 				<p>At Farmilo Strategy we know how to implement practical solutions to business problems.</p>
@@ -38,7 +37,7 @@ const Home = () => (
 				<p>We also recognize that every situation is unique, with its own challenges and opportunities. That’s why we put a premium on listening and understanding. That’s why we work with you and your team to develop a bespoke solution. Your goals become our goals.</p>
 				<p>Let us help your small or medium sized business realize its potential.</p>
 			</div>
-			<div />
+			<div class={style.blankArea}/>
 		</div>
 	</div>
 );

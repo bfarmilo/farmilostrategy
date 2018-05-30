@@ -2,28 +2,68 @@
 	padding: 56px 20px;
 	min-height: 100%;
 	width: 100%;
-	background-color:#353f12;
+	background-color: #353f12;
+}
+
+.titleArea {
+	grid-area: titleArea;
+	align-self:end;
+}
+
+.subtitleArea {
+	grid-area: subtitleArea;
+	align-self:start;
+}
+
+.social {
+	grid-area: social;
+	align-self:start;
 }
 
 .firstSection {
 	min-height: 500px;
 	background-size: 100%;
 	background: fixed url('../../assets/Cover.jpg');
-	display:grid;
-	grid-template-rows: 2fr 1fr 1fr 2fr;
+	display: grid;
+	grid-template-areas: 
+	"titleArea"
+	"titleArea"
+	"subtitleArea"
+	"social";
+}
+
+.photoArea {
+	grid-area: photoArea;
+	justify-self: center;
+}
+
+.summaryArea {
+	grid-area: summaryArea;
+}
+
+.blankArea {
+	grid-area: blankArea;
 }
 
 .secondSection {
 	background-size: 100%;
-	background-color:#FFFFFFa0;
-	display:grid;
-	grid-template-columns: 1fr 5fr 1fr;
+	background-color: #FFFFFFa0;
+	display: grid;
+	grid-template-areas: "photoArea" "summaryArea" "blankArea"
+}
+
+@media only screen and (min-width:800px) {
+	.secondSection {
+		grid-template-columns: 1fr 3fr 1fr;
+		grid-template-areas:
+		"photoArea summaryArea blankArea";
+	}
 }
 
 .firstSection div {
-   justify-self: center;
+	justify-self: center;
 }
 
 .logo {
-	max-width:300px;
+	max-width: 300px;
 }

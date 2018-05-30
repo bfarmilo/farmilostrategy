@@ -2,4 +2,28 @@
 	padding: 56px 20px;
 	min-height: 100%;
 	width: 100%;
+	background-color:#353f12;
+}
+
+.firstSection {
+	min-height: 500px;
+	background-size: 100%;
+	background: fixed url('../../assets/Cover.jpg');
+	display:grid;
+	grid-template-rows: 2fr 1fr 1fr 2fr;
+}
+
+.secondSection {
+	background-size: 100%;
+	background-color:#FFFFFFa0;
+	display:grid;
+	grid-template-columns: 1fr 5fr 1fr;
+}
+
+.firstSection div {
+   justify-self: center;
+}
+
+.logo {
+	max-width:300px;
 }

@@ -4,7 +4,7 @@ export default function (config, env, helpers) {
     config.node.process = true;
     config.node.Buffer = true;
     if (env.production) {
-      config.output.publicPath = '/home/';
+      config.output.publicPath = '/';
       // Make async work
       //let babel = config.module.loaders.filter(loader => loader.loader === 'babel-loader')[0].options;
       // Blacklist regenerator within env preset:

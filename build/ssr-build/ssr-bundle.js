@@ -811,7 +811,7 @@ var profile__ref5 = Object(preact_min["h"])(
 	Object(preact_min["h"])(
 		'li',
 		null,
-		'Mobile Operating Systems \u2013 iOS, Android'
+		'Mobile Operating Systems \u2013 iOS, Android, including OS updates and internals'
 	),
 	Object(preact_min["h"])(
 		'li',
@@ -898,12 +898,6 @@ var _ref10 = Object(preact_min["h"])(
 	'My management experience spanned over 15 years as a Senior leader, responsible for a team of 150 software and hardware engineers developing custom reverse engineering software, performing chip-level analysis and system-level analysis. During that time we added, through acquisition, teams in Warsaw Poland, Shanghai China, and Austin Texas. I was responsible for integrating these newly acquired companies to build a coherent, productive team.'
 );
 
-var _ref11 = Object(preact_min["h"])(
-	'p',
-	null,
-	'I have a Bachelor\u2019s degree in Engineering Physics (Electrical) from Queen\u2019s University in Canada, and I\'m a member of the Professional Engineers of Ontario.'
-);
-
 var profile_Profile = function Profile() {
 	return Object(preact_min["h"])(
 		'div',
@@ -949,8 +943,7 @@ var profile_Profile = function Profile() {
 				profile__ref7,
 				profile__ref8,
 				_ref9,
-				_ref10,
-				_ref11
+				_ref10
 			),
 			Object(preact_min["h"])('div', { 'class': profile_style_default.a.blankArea })
 		)

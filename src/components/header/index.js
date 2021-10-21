@@ -7,7 +7,9 @@ const Header = () => (
 		<h1>Farmilo Strategy</h1>
 		<nav>
 			<Link activeClassName={style.active} href="/">Home</Link>
-			<a href="#about">About</a>
+			<Link activeClassName={style.active} href="/ip/">Intellectual Property Services</Link>
+			<Link activeClassName={style.active} href="/management/">Management Consulting Services</Link>
+			<Link activeClassName={style.active} href="/profile/">About</Link>
 		</nav>
 	</header>
 );

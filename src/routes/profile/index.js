@@ -37,7 +37,7 @@ const Profile = () => (
 				<ul>
 					<li>Digital Video – MPEG2, ATSC, MPEG4, Digital Rights Management</li>
 					<li>Hardware – Software updates, system memory, network interface, USB communications</li>
-					<li>Mobile Operating Systems – iOS, Android</li>
+					<li>Mobile Operating Systems – iOS, Android, including OS updates and internals</li>
 					<li>Streaming – DASH, HLS, BMFF, fMP4, MPEG-TS, WebM, content delivery, Encrypted Media Extensions, Media Source Extensions</li>
 					<li>Internet – IPv4/6, TCP/IP, TLS/SSL, Content Delivery Networks</li>
 					<li>App Development – Front-end Technologies (React, JQuery, HTML5), Back-end Technologies (NodeJS/Express, PHP, also web server deployment including nGINX, Apache), Database Engines (SQLite, SQL Server, Redis, MongoDB), Cloud Services (MS Azure, AWS).</li>
@@ -61,7 +61,6 @@ const Profile = () => (
 				<p>My management experience spanned over 15 years as a Senior leader, responsible for a team of 150 software and hardware engineers developing custom reverse engineering software, performing chip-level analysis and system-level analysis.
 					During that time we added, through acquisition, teams in Warsaw Poland, Shanghai China, and Austin Texas. I was responsible for integrating these newly acquired companies to build a coherent, productive team.
 				</p>
-				<p>I have a Bachelor’s degree in Engineering Physics (Electrical) from Queen’s University in Canada, and I'm a member of the Professional Engineers of Ontario.</p>
 			</div>
 			<div class={style.blankArea} />
 		</div>

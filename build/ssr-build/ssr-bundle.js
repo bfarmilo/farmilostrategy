@@ -58,7 +58,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/home/";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = "JkW7");
@@ -933,7 +933,7 @@ var profile_Profile = function Profile() {
 			Object(preact_min["h"])(
 				'div',
 				{ 'class': profile_style_default.a.photoArea },
-				Object(preact_min["h"])('img', { src: '../assets/FarmiloStrategy_2.png', alt: 'Bill Farmilo', 'class': profile_style_default.a.logo })
+				Object(preact_min["h"])('div', { 'class': profile_style_default.a.logo })
 			),
 			Object(preact_min["h"])(
 				'div',
@@ -1079,7 +1079,7 @@ var ip_IntellectualProperty = function IntellectualProperty() {
 			Object(preact_min["h"])(
 				'div',
 				{ 'class': ip_style_default.a.photoArea },
-				Object(preact_min["h"])('img', { src: '../assets/FarmiloStrategy_2.png', alt: 'Bill Farmilo', 'class': ip_style_default.a.logo })
+				Object(preact_min["h"])('div', { 'class': ip_style_default.a.logo })
 			),
 			Object(preact_min["h"])(
 				'div',
@@ -1236,7 +1236,7 @@ var management_Management = function Management() {
 			Object(preact_min["h"])(
 				'div',
 				{ 'class': management_style_default.a.photoArea },
-				Object(preact_min["h"])('img', { src: '../assets/FarmiloStrategy_2.png', alt: 'Bill Farmilo', 'class': management_style_default.a.logo })
+				Object(preact_min["h"])('div', { 'class': management_style_default.a.logo })
 			),
 			Object(preact_min["h"])(
 				'div',

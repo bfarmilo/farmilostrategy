@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/farmilos/public_html/home
+    - /bin/rm -rf $DEPLOYPATH/*
+    - /bin/cp -R build/. $DEPLOYPATH

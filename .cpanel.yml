@@ -2,5 +2,10 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/farmilos/public_html/
-    - /bin/rm -rf $DEPLOYPATH/*.php
+    - /bin/rm -rf $DEPLOYPATH/*.js
+    - /bin/rm -rf $DEPLOYPATH/*.map
+    - /bin/rm -rf $DEPLOYPATH/*.jpg
+    - /bin/rm -rf $DEPLOYPATH/*.png
+    - /bin/rm -rf $DEPLOYPATH/*.css
+    - /bin/rm -rf $DEPLOYPATH/*.json
     - /bin/cp -R build/. $DEPLOYPATH

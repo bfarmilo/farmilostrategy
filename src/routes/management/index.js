@@ -27,7 +27,7 @@ const Management = () => (
 		</div>
 		<div id="about" class={style.secondSection}>
 			<div class={style.photoArea}>
-				<img src="../assets/FarmiloStrategy_2.png" alt="Bill Farmilo" class={style.logo} />
+				<div class={style.logo} />
 			</div>
 			<div class={style.summaryArea}>
 				<p class={style.sectionHeader}>Management Consulting Services</p>

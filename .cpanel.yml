@@ -3,5 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/farmilos/public_html/
     - /bin/rm -rf $DEPLOYPATH/index.html
-    - /bin/rm -rf $DEPLOYPATH/assets
+    - /bin/rm -rf $DEPLOYPATH/assets/*
     - /bin/cp -R . $DEPLOYPATH

@@ -43,8 +43,8 @@
             padding: 1rem 2rem;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            box-sizing:border-box;
-            overflow:hidden;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
         header .logo {
@@ -80,8 +80,8 @@
             /* Adds spacing between nav links */
             justify-content: center;
             /* Centers nav links when wrapping */
-            max-width:100%;
-            overflow:hidden;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         header nav a {
@@ -247,6 +247,7 @@
                 font-size: 0.9rem;
                 /* Reduces font size for smaller screens */
             }
+
             .service-category {
                 flex: 1 1 100%;
             }
@@ -335,12 +336,15 @@
             background: #c27c23;
         }
 
+        /*
+        
         #contact {
             background: linear-gradient(to left,
                     hsla(var(--text-color-hsl), 0.8),
                     hsla(var(--light-bg-hsl), 0.5)),
                 url('./assets/1512998844734-cd2cca565822-df9b3336.jpg') no-repeat center center/cover;
         }
+        */
 
         footer {
             background: hsl(var(--primary-color-hsl));
@@ -399,15 +403,16 @@
         <p>Our network of experienced licensing professionals and IP-savvy subject-matter experts are ready
             to help you tackle any challenge. From quick assessments to long-term campaign support, we tailor our
             services to meet your goals and budget.</p>
+        <!--moved this section up here when it's just me-->
             <div class="team-members">
-                <div class="team-member">
-                    <img src="./assets/Farmilo-Square-Formal.png" alt="Bill Farmilo" class="team-photo">
-                    <div class="team-info">
-                        <p>
-                            <strong>Bill Farmilo, B.Sc.E., C.L.P.</strong><br>
-                            Principal Consultant
-                        </p>
-                        <div style="display:flex;">
+            <div class="team-member">
+                <img src="./assets/Farmilo-Square-Formal.png" alt="Bill Farmilo" class="team-photo">
+                <div class="team-info">
+                    <p>
+                        <strong>Bill Farmilo, B.Sc.E., C.L.P.</strong><br>
+                        Principal Consultant
+                    </p>
+                    <div style="display:flex;">
                         <div class="icon">
                             <a href="https://ca.linkedin.com/in/bill-farmilo-324b081?trk=profile-badge">
                                 <img src="./assets/In-Blue-40.png" alt="Link to LinkedIn Profile" srcset="">
@@ -419,83 +424,84 @@
                             </a>
                         </div>
                     </div>
-                    </div>
                 </div>
-                </div>
+            </div>
+        </div>
     </section>
 
     <div id="services">
-    <section class="section" >
-        <h2>Our Services</h2>
-        <div class="service-categories">
-            <!-- Patent Due Diligence -->
-            <div class="service-category">
-                <h3>Patent Due Diligence</h3>
-                <p>We provide comprehensive reviews of patents or technologies to assess their value, strengths, and
-                    weaknesses for scenarios like licensing, defensive strategies, or litigation.</p>
-                <ul>
-                    <li>Triaging large portfolios to identify a short list of high-value patents.</li>
-                    <li>Applying real-world licensing and litigation experience to evaluate shortlisted assets.</li>
-                    <li>Providing actionable insights for informed decision-making.</li>
-                </ul>
-                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
-            </div>
+        <section class="section">
+            <h2>Our Services</h2>
+            <div class="service-categories">
+                <!-- Patent Due Diligence -->
+                <div class="service-category">
+                    <h3>Patent Due Diligence</h3>
+                    <p>We provide comprehensive reviews of patents or technologies to assess their value, strengths, and
+                        weaknesses for scenarios like licensing, defensive strategies, or litigation.</p>
+                    <ul>
+                        <li>Triaging large portfolios to identify a short list of high-value patents.</li>
+                        <li>Applying real-world licensing and litigation experience to evaluate shortlisted assets.</li>
+                        <li>Providing actionable insights for informed decision-making.</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+                </div>
 
-            <!-- Patent Monetization -->
-            <div class="service-category">
-                <h3>Patent Monetization</h3>
-                <p>From patent mining through to licensing negotiations, we help clients generate revenue from their
-                    patents and engage in effective licensing discussions.</p>
-                <ul>
-                    <li>Identify high-potential patents from portfolios large or small.</li>
-                    <li>Prepare for licensing by producing claim charts, understanding the specification and file
-                        history, and evaluating validity.</li>
-                    <li>Facilitate technical and commercial licensing negotiations.</li>
-                </ul>
-                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
-            </div>
+                <!-- Patent Monetization -->
+                <div class="service-category">
+                    <h3>Patent Monetization</h3>
+                    <p>From patent mining through to licensing negotiations, we help clients generate revenue from their
+                        patents and engage in effective licensing discussions.</p>
+                    <ul>
+                        <li>Identify high-potential patents from portfolios large or small.</li>
+                        <li>Prepare for licensing by producing claim charts, understanding the specification and file
+                            history, and evaluating validity.</li>
+                        <li>Facilitate technical and commercial licensing negotiations.</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+                </div>
 
-            <!-- Patent Divestment and Brokerage -->
-            <div class="service-category">
-                <h3>Patent Divestment and Brokerage</h3>
-                <p>We assist patent owners looking to sell their assets by conducting evidence-of-use analysis,
-                    preparing a marketing package and connecting sellers with potential buyers through our extensive
-                    network.</p>
-                <ul>
-                    <li>Develop claim charts and asset packages.</li>
-                    <li>Work with you to develop a go-to-market plan.</li>
-                    <li>Leverage a network of buyers to maximize value.</li>
-                </ul>
-                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
-            </div>
+                <!-- Patent Divestment and Brokerage -->
+                <div class="service-category">
+                    <h3>Patent Divestment and Brokerage</h3>
+                    <p>We assist patent owners looking to sell their assets by conducting evidence-of-use analysis,
+                        preparing a marketing package and connecting sellers with potential buyers through our extensive
+                        network.</p>
+                    <ul>
+                        <li>Develop claim charts and asset packages.</li>
+                        <li>Work with you to develop a go-to-market plan.</li>
+                        <li>Leverage a network of buyers to maximize value.</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+                </div>
 
-            <!-- Inbound Licensing -->
-            <div class="service-category">
-                <h3>Inbound Licensing</h3>
-                <p>Defend against patent assertions with expert guidance on claim chart analysis, invalidity arguments,
-                    and non-infringement strategies.</p>
-                <ul>
-                    <li>Prepare invalidity and non-infringement arguments.</li>
-                    <li>Conduct Prior Art searches to bolster invalidity arguments.</li>
-                    <li>Participate in technical negotiations as your virtual licensing team.</li>
-                </ul>
-                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
-            </div>
+                <!-- Inbound Licensing -->
+                <div class="service-category">
+                    <h3>Inbound Licensing</h3>
+                    <p>Defend against patent assertions with expert guidance on claim chart analysis, invalidity
+                        arguments,
+                        and non-infringement strategies.</p>
+                    <ul>
+                        <li>Prepare invalidity and non-infringement arguments.</li>
+                        <li>Conduct Prior Art searches to bolster invalidity arguments.</li>
+                        <li>Participate in technical negotiations as your virtual licensing team.</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+                </div>
 
-            <!-- Litigation Support -->
-            <div class="service-category">
-                <h3>Litigation Support</h3>
-                <p>Provide expertise and support for all phases of patent litigation, from venue research to claim
-                    construction to reviewing briefs and reports.</p>
-                <ul>
-                    <li>Review complaints, claim constructions, and other technical materials.</li>
-                    <li>Assist with validity challenges like Inter Partes Reviews (IPRs).</li>
-                    <li>Support the preparation of technical arguments and presentations.</li>
-                </ul>
-                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
-            </div>
+                <!-- Litigation Support -->
+                <div class="service-category">
+                    <h3>Litigation Support</h3>
+                    <p>Provide expertise and support for all phases of patent litigation, from venue research to claim
+                        construction to reviewing briefs and reports.</p>
+                    <ul>
+                        <li>Review complaints, claim constructions, and other technical materials.</li>
+                        <li>Assist with validity challenges like Inter Partes Reviews (IPRs).</li>
+                        <li>Support the preparation of technical arguments and presentations.</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+                </div>
 
-            <!-- IP Strategy for Pre-Patent Inventions 
+                <!-- IP Strategy for Pre-Patent Inventions, currently disabled
             <div class="service-category">
                 <h3>IP Strategy Consulting</h3>
                 <p>Guide companies in identifying patentable inventions and work with your patent prosecution team to craft claims to maximize licensing
@@ -508,12 +514,12 @@
                 <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
             </div>
             -->
-        </div>
-    </section>
-</div>
-    <!--
+            </div>
+        </section>
+    </div>
+    <!--Our Team section, currently disabled since it's just me
     <section class="section" id="dedicated-team">
-        <h2>About Us</h2>
+        <h2>Our Team</h2>
         <div class="team-members">
             <div class="team-member">
                 <img src="./assets/Farmilo-Square-Formal.png" alt="Bill Farmilo" class="team-photo">
@@ -551,31 +557,31 @@
                     </div>
                 </div>
             </div>
-            -->
-        </div>
+    </div>
     </section>
+    -->
 
 
     <div id="contact">
-    <section class="section">
-        <h2>Contact Us</h2>
-        <p>We'd love to hear from you! Use the form below to get in touch.</p>
-        <div class="contact-form">
-            <form action="mailto:web-enquiry@farmilostrategy.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-</div>
+        <section class="section">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Use the form below to get in touch.</p>
+            <div class="contact-form">
+                <form action="mailto:web-enquiry@farmilostrategy.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 Farmilo Strategy, Inc. All rights reserved. <a href="#privacy-policy">Privacy Policy</a></p>

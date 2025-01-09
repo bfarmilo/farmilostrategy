@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmilo Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color-hsl: 0, 0%, 11%;
+            /* Dark gray from the maze */
+            --accent-color-hsl: 34, 76%, 55%;
+            /* Orange from the bull's eye */
+            --light-bg-hsl: 0, 0%, 95%;
+            /* Light gray for background */
+            --text-color-hsl: 231, 33%, 26%;
+            /* Deep blue from the bull */
+            --font-title: "Josefin Sans", sans-serif;
+            --font-body: "Roboto", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-body);
+            color: hsl(var(--text-color-hsl));
+            background: hsl(var(--light-bg-hsl));
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: hsl(var(--primary-color-hsl));
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing:border-box;
+            overflow:hidden;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            max-height: 50px;
+            flex-shrink: 0;
+            /* Ensures the container doesn’t expand too much */
+        }
+
+        header .logo img {
+            height: 40px;
+            /* Sets the logo height explicitly */
+            width: auto;
+            /* Maintains aspect ratio */
+            max-height: 100%;
+            /* Prevents the image from exceeding the container height */
+        }
+
+        header .logo span {
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            /* Adds space between the logo and text */
+        }
+
+        header nav {
+            display: flex;
+            flex-wrap: wrap;
+            /* Allows nav items to wrap on smaller screens */
+            gap: 1rem;
+            /* Adds spacing between nav links */
+            justify-content: center;
+            /* Centers nav links when wrapping */
+            max-width:100%;
+            overflow:hidden;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-family: var(--font-title);
+            font-weight: 500;
+            font-size: 1.4rem;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: hsl(var(--accent-color-hsl));
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+            background: linear-gradient(to left,
+                    hsla(var(--text-color-hsl), 0.7),
+                    hsla(var(--light-bg-hsl), 0.7)),
+                url('./assets/1514958726619-bd6fff01b5ac-e5201f11.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .hero .cta {
+            margin-top: 2rem;
+        }
+
+        .hero .cta a {
+            text-decoration: none;
+            color: white;
+            background: hsl(var(--accent-color-hsl));
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            font-kerning: normal;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+
+        .hero .cta a:hover {
+            background: #c27c23;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section h2 {
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .section h3 {
+            font-family: var(--font-body);
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        #services {
+            background: linear-gradient(to left,
+                    hsla(var(--text-color-hsl), 0.8),
+                    hsla(var(--light-bg-hsl), 0.7)),
+                url('./assets/1546349851-64285be8e9fa-b79faa89.jpg') no-repeat center center/cover;
+        }
+
+        .service-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .service-category {
+            flex: 1 1 calc(33.333% - 2rem);
+            min-width: 250px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .service-category h3 {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-category ul {
+            margin: 1rem 0;
+            padding: 0;
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        .service-category li {
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: hsl(var(--accent-color-hsl));
+            font-family: var(--font-body);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #c27c23;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                /* Stacks content vertically on smaller screens */
+                padding: 1rem;
+                /* Reduces padding for smaller screens */
+            }
+
+            header nav {
+                justify-content: center;
+                /* Centers nav items on smaller screens */
+                margin-top: 0.5rem;
+                /* Adds spacing below the logo */
+            }
+
+            header nav a {
+                font-size: 0.9rem;
+                /* Reduces font size for smaller screens */
+            }
+            .service-category {
+                flex: 1 1 100%;
+            }
+        }
+
+
+        .team-members {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            width: 500px;
+        }
+
+        .team-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            /* Makes the image round */
+            border: 2px solid hsl(var(--accent-color));
+            /* Adds a border for styling */
+            object-fit: cover;
+            /* Ensures the image scales properly */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Adds subtle shadow */
+        }
+
+        .team-info {
+            text-align: left;
+        }
+
+        .team-info p {
+            margin: 0.5rem 0;
+        }
+
+        .team-info a {
+            margin-right: 1rem;
+            display: inline-block;
+        }
+
+        .icon img {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 1rem;
+            background: hsl(var(--accent-color-hsl));
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #c27c23;
+        }
+
+        #contact {
+            background: linear-gradient(to left,
+                    hsla(var(--text-color-hsl), 0.8),
+                    hsla(var(--light-bg-hsl), 0.5)),
+                url('./assets/1512998844734-cd2cca565822-df9b3336.jpg') no-repeat center center/cover;
+        }
+
+        footer {
+            background: hsl(var(--primary-color-hsl));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: hsl(var(--accent-color-hsl));
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./assets/Minotaur_Logo.png" alt="Farmilo Strategy Logo">
+            <span>Farmilo Strategy Inc</span>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div>
+            <h1>Patent Licensing Simplified</h1>
+            <p>We help <span style="color:hsl(var(--text-color-hsl)); font-weight:bold">patent owners</span> unlock the
+                value of their patents and navigate intellectual property strategy with
+                clarity and confidence.</p>
+            <p>We help <span style="color:hsl(var(--text-color-hsl)); font-weight:bold">technology companies</span>
+                respond effectively to inbound licensing demands.</p>
+            <div class="cta">
+                <a href="#contact">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>Experience and Expertise</h2>
+        <p>Principal Consultant Bill Farmilo has over 25 years of experience in patent licensing and intellectual
+            property consulting, and a network
+            of experienced consultants available to help you.</p>
+        <p>Farmilo Strategy's consultants have been on both sides of the table, and pride ourselves on preparing
+            rigorously, setting practical goals, and conducting principled negotiations.</p>
+        <p>Our network of experienced licensing professionals and IP-savvy subject-matter experts are ready
+            to help you tackle any challenge. From quick assessments to long-term campaign support, we tailor our
+            services to meet your goals and budget.</p>
+    </section>
+
+    <div id="services">
+    <section class="section" >
+        <h2>Our Services</h2>
+        <div class="service-categories">
+            <!-- Patent Due Diligence -->
+            <div class="service-category">
+                <h3>Patent Due Diligence</h3>
+                <p>We provide comprehensive reviews of patents or technologies to assess their value, strengths, and
+                    weaknesses for scenarios like licensing, defensive strategies, or litigation.</p>
+                <ul>
+                    <li>Triaging large portfolios to identify a short list of high-value patents.</li>
+                    <li>Applying real-world licensing and litigation experience to evaluate shortlisted assets.</li>
+                    <li>Providing actionable insights for informed decision-making.</li>
+                </ul>
+                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+            </div>
+
+            <!-- Patent Monetization -->
+            <div class="service-category">
+                <h3>Patent Monetization</h3>
+                <p>From patent mining through to licensing negotiations, we help clients generate revenue from their
+                    patents and engage in effective licensing discussions.</p>
+                <ul>
+                    <li>Identify high-potential patents from portfolios large or small.</li>
+                    <li>Prepare for licensing by producing claim charts, understanding the specification and file
+                        history, and evaluating validity.</li>
+                    <li>Facilitate technical and commercial licensing negotiations.</li>
+                </ul>
+                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+            </div>
+
+            <!-- Patent Divestment and Brokerage -->
+            <div class="service-category">
+                <h3>Patent Divestment and Brokerage</h3>
+                <p>We assist patent owners looking to sell their assets by conducting evidence-of-use analysis,
+                    preparing a marketing package and connecting sellers with potential buyers through our extensive
+                    network.</p>
+                <ul>
+                    <li>Develop claim charts and asset packages.</li>
+                    <li>Work with you to develop a go-to-market plan.</li>
+                    <li>Leverage a network of buyers to maximize value.</li>
+                </ul>
+                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+            </div>
+
+            <!-- Inbound Licensing -->
+            <div class="service-category">
+                <h3>Inbound Licensing</h3>
+                <p>Defend against patent assertions with expert guidance on claim chart analysis, invalidity arguments,
+                    and non-infringement strategies.</p>
+                <ul>
+                    <li>Prepare invalidity and non-infringement arguments.</li>
+                    <li>Conduct Prior Art searches to bolster invalidity arguments.</li>
+                    <li>Participate in technical negotiations as your virtual licensing team.</li>
+                </ul>
+                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+            </div>
+
+            <!-- Litigation Support -->
+            <div class="service-category">
+                <h3>Litigation Support</h3>
+                <p>Provide expertise and support for all phases of patent litigation, from venue research to claim
+                    construction to reviewing briefs and reports.</p>
+                <ul>
+                    <li>Review complaints, claim constructions, and other technical materials.</li>
+                    <li>Assist with validity challenges like Inter Partes Reviews (IPRs).</li>
+                    <li>Support the preparation of technical arguments and presentations.</li>
+                </ul>
+                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+            </div>
+
+            <!-- IP Strategy for Pre-Patent Inventions 
+            <div class="service-category">
+                <h3>IP Strategy Consulting</h3>
+                <p>Guide companies in identifying patentable inventions and work with your patent prosecution team to craft claims to maximize licensing
+                    potential.</p>
+                <ul>
+                    <li>Evaluate potentially patentable inventions.</li>
+                    <li>Provide advice on drafting claims for maximum value.</li>
+                    <li>Review licensing potential and suggest amendments.</li>
+                </ul>
+                <a href="#contact" class="cta-button">Contact Us for a Free Consultation</a>
+            </div>
+            -->
+        </div>
+    </section>
+</div>
+
+    <section class="section" id="dedicated-team">
+        <h2>Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="./assets/Farmilo-Square-Formal.png" alt="Bill Farmilo" class="team-photo">
+                <div class="team-info">
+                    <p>
+                        <strong>Bill Farmilo, B.Sc.E., C.L.P.</strong><br>
+                        Principal Consultant
+                    </p>
+                    <div style="display:flex;">
+                    <div class="icon">
+                        <a href="https://ca.linkedin.com/in/bill-farmilo-324b081?trk=profile-badge">
+                            <img src="./assets/In-Blue-40.png" alt="Link to LinkedIn Profile" srcset="">
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://github.com/bfarmilo" target="_blank">
+                            <img src="./assets/github-mark.png" alt="Link to Github Profile" srcset="">
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="./assets/Lemna%203.jpg" alt="Boyd Lemna" class="team-photo">
+                <div class="team-info">
+                    <p>
+                        <strong>Boyd Lemna, M.Sc.E.</strong><br>
+                        Principal Consultant, OnSwitch Patent Strategies
+                    </p>
+                    <div class="icon">
+                        <a href="https://www.linkedin.com/in/boyd-lemna-119855/">
+                            <img src="./assets/In-Blue-40.png" alt="Link to LinkedIn Profile" srcset="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="contact">
+    <section class="section">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Use the form below to get in touch.</p>
+        <div class="contact-form">
+            <form action="mailto:web-enquiry@farmilostrategy.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+    <footer>
+        <p>&copy; 2025 Farmilo Strategy, Inc. All rights reserved. <a href="#privacy-policy">Privacy Policy</a></p>
+    </footer>
+</body>
+
+</html>

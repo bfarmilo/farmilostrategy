@@ -3,4 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/farmilos/public_html/
     - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
+    - /bin/cp favicon.ico $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
